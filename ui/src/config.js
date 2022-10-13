@@ -5,7 +5,7 @@ const config = {
     },
 
     production: {
-        apiUrl: "https://bsdi-poc-api.herokuapp.com"
+        apiUrl: "https://miltrack-db.herokuapp.com"
     },
     test: {
         apiUrl: ''
