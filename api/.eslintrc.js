@@ -13,8 +13,8 @@ module.exports = {
         "jest"
     ],
     "rules": {
-        "jest/no-disabled-tests": "warn",
-        "jest/no-identical-title": "warn",
-        "jest/valid-expect": "warn"
+    //     "jest/no-disabled-tests": "warn",
+    //     "jest/no-identical-title": "warn",
+    //     "jest/valid-expect": "warn"
     }
 }
