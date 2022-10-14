@@ -172,14 +172,14 @@ function Profile() {
 
     // grab all users
     useEffect(() => {
-        fetch('http://localhost:3001/users')
+        fetch('https://miltrack-db.herokuapp.com/users')
             .then(response => response.json())
             .then(data => setAllUsers(data))
     }, [])
 
     // Temporary use effect to set hardcoded LoggedInUser until we have logging in functionality
     // useEffect(() => {
-    //     fetch('http://localhost:3001/users')
+    //     fetch('https://miltrack-db.herokuapp.com/users')
     //         .then(response => response.json())
     //         .then(data => setLoggedUser([{ id: 1}]))
     //         .then(data => {
@@ -201,7 +201,7 @@ function Profile() {
     */
     useEffect(() => {
         console.log("this is the user" , loggedUser);
-        fetch(`http://localhost:3001/organization/1`)
+        fetch(`https://miltrack-db.herokuapp.com/organization/1`)
             .then(response => response.json())
             .then(data => setLoggedUserOrg(data[0].organization_name))
             .then(data => {
@@ -222,7 +222,7 @@ function Profile() {
             console.log(loggedUser[0]);
             let userId = loggedUser[0].id;
             let medicalPromise = (
-                fetch(`http://localhost:3001/medical/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/medical/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -232,7 +232,7 @@ function Profile() {
                     })
             )
             let annualTrainingPromise = (
-                fetch(`http://localhost:3001/annual_training/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/annual_training/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -244,7 +244,7 @@ function Profile() {
 
             let evaluationsPromise = (
 
-                fetch(`http://localhost:3001/evaluations/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/evaluations/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -256,7 +256,7 @@ function Profile() {
             )
 
             let specialSkillsPromise = (
-                fetch(`http://localhost:3001/special_skills/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/special_skills/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -269,7 +269,7 @@ function Profile() {
 
             let staticSkillsPromise = (
 
-                fetch(`http://localhost:3001/static_skills/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/static_skills/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -356,7 +356,7 @@ function Profile() {
             console.log("servicemember inside profile: ", serviceMember);
             let userId = serviceMember.id;
             let medicalPromise = (
-                fetch(`http://localhost:3001/medical/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/medical/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -366,7 +366,7 @@ function Profile() {
                     })
             )
             let annualTrainingPromise = (
-                fetch(`http://localhost:3001/annual_training/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/annual_training/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -378,7 +378,7 @@ function Profile() {
 
             let evaluationsPromise = (
 
-                fetch(`http://localhost:3001/evaluations/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/evaluations/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -390,7 +390,7 @@ function Profile() {
             )
 
             let specialSkillsPromise = (
-                fetch(`http://localhost:3001/special_skills/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/special_skills/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -403,7 +403,7 @@ function Profile() {
 
             let staticSkillsPromise = (
 
-                fetch(`http://localhost:3001/static_skills/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/static_skills/${userId}`)
                     .then(response => response.json())
                     .then(data => {
 
@@ -499,7 +499,7 @@ function Profile() {
 
                 } else {
                     let promise = (
-                        fetch(`http://localhost:3001/${arrayType}/${userId}`, {
+                        fetch(`https://miltrack-db.herokuapp.com/${arrayType}/${userId}`, {
                             method: 'POST',
                             body: JSON.stringify(array[arrayLength - 1]),
                             headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}

@@ -44,7 +44,7 @@ function App() {
   const [ serviceMemberSummary, setServiceMemberSummary ] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/users')
+    fetch('https://miltrack-db.herokuapp.com/users')
     .then(response => response.json())
     .then(data => setAllUsers(data))
   }, [])
@@ -52,7 +52,7 @@ function App() {
   // Temporary use effect to set hardcoded LoggedInUser until we have logging in functionality
 
   useEffect(() => {
-    fetch('http://localhost:3001/users')
+    fetch('https://miltrack-db.herokuapp.com/users')
     /*.then(response => response.json())
     .then(data => setLoggedUser([{"id":1,"username":null,"name":"Russell Annis","password":"1234","rank":"E4", "mos": "17C", "current_status": "PDY", "supervisor_id" : null,"organization_id":1}]))
     .then(data => {
@@ -66,7 +66,7 @@ function App() {
   }, [])
 
   // useEffect(() => {
-  //   fetch('http://localhost:3001/users')
+  //   fetch('https://miltrack-db.herokuapp.com/users')
   //   // .then(response => response.json())
   //   // .then(data => setLoggedUser([{"username":null,"name":"Russell Annis","password":"1234","rank":"E4", "mos": "17C", "current_status": "PDY", "supervisor_id" : null,"organization_id":1}]))
   //   // .then(data => {
@@ -84,7 +84,7 @@ function App() {
   // set loggedUser's subordinates if he/she has any
 
   useEffect(() => {
-    fetch(`http://localhost:3001/organization/`)
+    fetch(`https://miltrack-db.herokuapp.com/organization/`)
     .then(response => response.json())
     .then(data => setOrgData(data))
   }, [])

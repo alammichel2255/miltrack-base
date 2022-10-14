@@ -219,7 +219,7 @@ export const Medical = (props) => {
             if (field.pha_date || field.dental_date || field.hearing_date || field.vision_date || field.hiv_date) {
                 
                     console.log("field: ", field);
-                    fetch(`http://localhost:3001/medical/${userId}`, {
+                    fetch(`https://miltrack-db.herokuapp.com/medical/${userId}`, {
                         method: 'PATCH',
                         body: JSON.stringify(field),
                         headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}
@@ -829,7 +829,7 @@ export const AnnualTraining = (props) => {
             if (field.training_name) {
 
                 console.log("field: ", field);
-                    fetch(`http://localhost:3001/annual_training/${userId}`, {
+                    fetch(`https://miltrack-db.herokuapp.com/annual_training/${userId}`, {
                         method: 'PATCH',
                         body: JSON.stringify(field),
                         headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}
@@ -895,7 +895,7 @@ export const AnnualTraining = (props) => {
 
                     promise = (
                         
-                        fetch(`http://localhost:3001/annual_training/${userId}`, {
+                        fetch(`https://miltrack-db.herokuapp.com/annual_training/${userId}`, {
                             method: 'DELETE',
                             body: JSON.stringify(itemToBeDeleted),
                             headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}
@@ -911,7 +911,7 @@ export const AnnualTraining = (props) => {
                     
                 //     promise = (
                         
-                //         fetch(`http://localhost:3001/special_skills/${userId}`, {
+                //         fetch(`https://miltrack-db.herokuapp.com/special_skills/${userId}`, {
                 //             method: 'DELETE',
                 //             body: JSON.stringify(itemToBeDeleted),
                 //             headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}
@@ -925,7 +925,7 @@ export const AnnualTraining = (props) => {
 
                 //     promise = (
                         
-                //         fetch(`http://localhost:3001/static_skills/${userId}`, {
+                //         fetch(`https://miltrack-db.herokuapp.com/static_skills/${userId}`, {
                 //             method: 'DELETE',
                 //             body: JSON.stringify(itemToBeDeleted),
                 //             headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}
@@ -1516,7 +1516,7 @@ export const SpecialTraining = (props) => {
             if (field.skill_refresh_date) {
 
                 console.log("field: ", field);
-                    fetch(`http://localhost:3001/special_skills/${userId}`, {
+                    fetch(`https://miltrack-db.herokuapp.com/special_skills/${userId}`, {
                         method: 'PATCH',
                         body: JSON.stringify(field),
                         headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}
@@ -1582,7 +1582,7 @@ export const SpecialTraining = (props) => {
                         
                     promise = (
                         
-                        fetch(`http://localhost:3001/special_skills/${userId}`, {
+                        fetch(`https://miltrack-db.herokuapp.com/special_skills/${userId}`, {
                             method: 'DELETE',
                             body: JSON.stringify(itemToBeDeleted),
                             headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}
@@ -2135,7 +2135,7 @@ export const StaticTraining = (props) => {
                 if (field.skill_date) {
     
                     console.log("field: ", field);
-                        fetch(`http://localhost:3001/static_skills/${userId}`, {
+                        fetch(`https://miltrack-db.herokuapp.com/static_skills/${userId}`, {
                             method: 'PATCH',
                             body: JSON.stringify(field),
                             headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}
@@ -2201,7 +2201,7 @@ export const StaticTraining = (props) => {
 
                         promise = (
                             
-                            fetch(`http://localhost:3001/static_skills/${userId}`, {
+                            fetch(`https://miltrack-db.herokuapp.com/static_skills/${userId}`, {
                                 method: 'DELETE',
                                 body: JSON.stringify(itemToBeDeleted),
                                 headers: {"Access-Control-Allow-Origin": "*", 'Content-Type': 'application/json'}

@@ -17,7 +17,7 @@ const Loginbars = () => {
 
 
     useEffect(() => { 
-        fetch("http://localhost:3001/users")
+        fetch("https://miltrack-db.herokuapp.com/users")
             .then((response) => response.json())
             .then((data) => {
                 console.log("data: ", data);

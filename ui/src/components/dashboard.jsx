@@ -129,11 +129,11 @@ const [skillsArr, setSkillsArr] = useState([]);
     useEffect(() => {
         let newArr = [];
         loggedUserServiceMembers.map((member)=>{
-            fetch(`http://localhost:3001/special_skills/${member.id}`)
+            fetch(`https://miltrack-db.herokuapp.com/special_skills/${member.id}`)
             .then(response => response.json())
             .then(specialData => (specialData.map((data)=>newArr.push(data))))
 
-            fetch(`http://localhost:3001/static_skills/${member.id}`)
+            fetch(`https://miltrack-db.herokuapp.com/static_skills/${member.id}`)
             .then(response => response.json())
             .then(staticData => (staticData.map((data)=>newArr.push(data))))
         })
@@ -169,7 +169,7 @@ const [skillsArr, setSkillsArr] = useState([]);
 
   // Temporary use effect to set hardcoded LoggedInUser until we have logging in functionality
      useEffect(() => {
-         fetch('http://localhost:3001/users')
+         fetch('https://miltrack-db.herokuapp.com/users')
     //     .then(response => response.json())
     //     .then(data => setLoggedUser([{id: 6, username:'ocelottip',name: 'Joe Rogan', password: '1234', rank: 'O6',supervisor_id:null,organization_id:3, MOS:'35F', current_status: "PDY"}]))
     //     .then(data => {
@@ -190,7 +190,7 @@ const [skillsArr, setSkillsArr] = useState([]);
     // grab logged user org
     useEffect(() => {
         console.log(loggedUser);
-        fetch(`http://localhost:3001/organization/1`)
+        fetch(`https://miltrack-db.herokuapp.com/organization/1`)
         .then(response => response.json())
         .then(data => setLoggedUserOrg(data[0].organization_name))
         .then(data => {
@@ -210,7 +210,7 @@ const [skillsArr, setSkillsArr] = useState([]);
         console.log("medical: ", loggedUser[0]);
         let userId = loggedUser[0].id;
         let medicalPromise = (
-            fetch(`http://localhost:3001/medical/${userId}`)
+            fetch(`https://miltrack-db.herokuapp.com/medical/${userId}`)
             .then(response => response.json())
             .then(data => {
                 
@@ -220,7 +220,7 @@ const [skillsArr, setSkillsArr] = useState([]);
             })
         )
         let annualTrainingPromise = ( 
-            fetch(`http://localhost:3001/annual_training/${userId}`)
+            fetch(`https://miltrack-db.herokuapp.com/annual_training/${userId}`)
             .then(response => response.json())
             .then(data => {
             
@@ -232,7 +232,7 @@ const [skillsArr, setSkillsArr] = useState([]);
 
         let evaluationsPromise = (
 
-            fetch(`http://localhost:3001/evaluations/${userId}`)
+            fetch(`https://miltrack-db.herokuapp.com/evaluations/${userId}`)
             .then(response => response.json())
             .then(data => {
                 
@@ -244,7 +244,7 @@ const [skillsArr, setSkillsArr] = useState([]);
         )
 
         let specialSkillsPromise = (
-            fetch(`http://localhost:3001/special_skills/`)
+            fetch(`https://miltrack-db.herokuapp.com/special_skills/`)
             .then(response => response.json())
             .then(data => {
                 
@@ -257,7 +257,7 @@ const [skillsArr, setSkillsArr] = useState([]);
 
         let staticSkillsPromise = (
 
-            fetch(`http://localhost:3001/static_skills/${userId}`)
+            fetch(`https://miltrack-db.herokuapp.com/static_skills/${userId}`)
             .then(response => response.json())
             .then(data => {
                 
@@ -336,7 +336,7 @@ const [skillsArr, setSkillsArr] = useState([]);
 
         const addSubordinate = (user, userId) => {
             let medicalPromise = (
-                fetch(`http://localhost:3001/medical/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/medical/${userId}`)
                 .then(response => response.json())
                 .then(data => {
                     
@@ -346,7 +346,7 @@ const [skillsArr, setSkillsArr] = useState([]);
                 })
             )
             let annualTrainingPromise = ( 
-                fetch(`http://localhost:3001/annual_training/${userId}`)
+                fetch(`https://miltrack-db.herokuapp.com/annual_training/${userId}`)
                 .then(response => response.json())
                 .then(data => {
                 

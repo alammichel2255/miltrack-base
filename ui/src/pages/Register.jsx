@@ -213,13 +213,13 @@ const Register = () => {
                         setFormComplete(false);
                         // let promise = new Promise(() => {  })
 
-                        fetch('http://localhost:3001/users')
+                        fetch('https://miltrack-ui.herokuapp.com/users')
                         .then(result => {
-                            addUserInfo("http://localhost:3001/users", user); 
+                            addUserInfo("https://miltrack-ui.herokuapp.com/users", user); 
                         })
                         .then(result => setTimeout(() => {
                             let newUser;
-                            fetch('http://localhost:3001/users')
+                            fetch('https://miltrack-ui.herokuapp.com/users')
                             .then(response => response.json())
                             .then(data => {
                                 newUser = data.pop();
@@ -231,11 +231,11 @@ const Register = () => {
                         .then (newUser => setTimeout(() => {
                             console.log(serviceMember);
                             console.log("serviceMember.id: ", serviceMember.id);
-                            addUserInfo(`http://localhost:3001/annual_training/${serviceMember.id}`, annualTraining) 
-                            addUserInfo(`http://localhost:3001/medical/${serviceMember.id}`, medTable)
-                            addUserInfo(`http://localhost:3001/static_skills/${serviceMember.id}`, skillsTable)
-                            addUserInfo(`http://localhost:3001/additional/${serviceMember.id}`, additionalTable)
-                            addUserInfo(`http://localhost:3001/evaluations/${serviceMember.id}`, evalTable)
+                            addUserInfo(`https://miltrack-ui.herokuapp.com/annual_training/${serviceMember.id}`, annualTraining) 
+                            addUserInfo(`https://miltrack-ui.herokuapp.com/medical/${serviceMember.id}`, medTable)
+                            addUserInfo(`https://miltrack-ui.herokuapp.com/static_skills/${serviceMember.id}`, skillsTable)
+                            addUserInfo(`https://miltrack-ui.herokuapp.com/additional/${serviceMember.id}`, additionalTable)
+                            addUserInfo(`https://miltrack-ui.herokuapp.com/evaluations/${serviceMember.id}`, evalTable)
                             
                             console.log("setting all user info")
                         }, 1000))
