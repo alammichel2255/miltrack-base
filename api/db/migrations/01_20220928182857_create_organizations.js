@@ -16,6 +16,6 @@ exports.up = function(knex) {
  */
 exports.down = function(knex) {
     return knex.schema.dropTableIfExists('organization');
-    // .then(knex.schema.dropTableIfExists('knex_migrations'))
-    // .then(knex.schema.dropTableIfExists('knex_migrations_lock'))
+    .then(knex.schema.dropTableIfExists('knex_migrations'))
+    .then(knex.schema.dropTableIfExists('knex_migrations_lock'))
 };
