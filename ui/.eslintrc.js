@@ -21,9 +21,9 @@ module.exports = {
         "jest"
     ],
     "rules": {
-        "jest/no-disabled-tests": "warn",
-        "jest/no-identical-title": "error",
-        "jest/valid-expect": "error"
+        // "jest/no-disabled-tests": "warn",
+        // "jest/no-identical-title": "warn",
+        // "jest/valid-expect": "warn"
     },
     "settings": {
         "react": {
