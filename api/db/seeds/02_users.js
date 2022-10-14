@@ -3,7 +3,7 @@
  * @returns { Promise<void> } 
  */
 exports.seed = async function(knex) {
-  // Deletes ALL existing entries
+  await knex('users').del()
   await knex('users').insert([
     {username:'snackboomz', name: 'Russell Annis', password: '1234', rank: 'E4',supervisor_id:6, MOS:'17C', current_status: 'PDY', DOB: '1973-10-01', BASD: '2015-07-01', DoDID: '123456789', organization_id:1},
     {username:'Heath_McGraw',name: 'Heath McGraw', password: '1234', rank: 'E7',supervisor_id:6, MOS:'37F', current_status: 'TDY', DOB: '1973-10-01', BASD: '2018-05-03', DoDID: '123456789', organization_id:2}, 
@@ -12,4 +12,5 @@ exports.seed = async function(knex) {
     {username:'keelsonwhimsical',name: 'Michel Alam', password: '1234', rank: 'E4',supervisor_id:6, MOS:'25U', current_status: 'TDY', DOB: '1973-10-01', BASD: '2015-10-01', DoDID: '123456789', organization_id:2},
     {username:'ocelottip',name: 'Joe Rogan', password: '1234', rank: 'O6',supervisor_id:null, MOS:'35F', current_status: 'PDY', DOB: '1973-10-01', BASD: '2012-12-01', DoDID: '123456789',organization_id:3}
   ]);
+
 };
